@@ -10,7 +10,17 @@ branches:
   - /test/
 matrix:
   include:
-  - os: linux
+  - arch: amd64
+    os: linux
+    dist: trusty
+    addons:
+      apt:
+        packages:
+        - gfortran
+        - zlib1g-dev
+        - libhdf5-dev
+  - arch: arm64
+    os: linux
     dist: trusty
     addons:
       apt:
